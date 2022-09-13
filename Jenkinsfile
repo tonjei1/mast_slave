@@ -25,9 +25,11 @@ pipeline{
       }
     }
     stage('codebuild'){
+      steps{
         agent {
           label 'slave2'
         }
+      }
     }
     stage('Unit-testing'){
         steps{
@@ -40,20 +42,5 @@ pipeline{
         }
     }
     
-    stage('codes'){
-        agent {
-          label 'slave1'
-        }
-    }
-    stage('Unit-tes'){
-        steps{
-          sh 'cat /etc/passwd'
-        }   
-    }
-    stage('sub'){
-        steps{
-            echo 'action3'
-        }
-    }
   }
 }

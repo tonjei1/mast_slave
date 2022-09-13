@@ -62,5 +62,5 @@ pipeline{
           echo 'action3'
       }
     }
- }
+}
 

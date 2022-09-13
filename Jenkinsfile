@@ -36,11 +36,28 @@ pipeline{
         sh 'cat /etc/passwd'
       }   
   }
-    stage('sub-job3'){
-        steps{
-            echo 'action3'
-        }
-    }
+  stage('sub-job3'){
+      steps{
+          echo 'action3'
+      }
+  }
     
+  stage('codes'){
+    steps{
+      agent {
+        label 'slave1'
+      }
+    }
+  }
+  stage('Unit-tes'){
+      steps{
+        sh 'cat /etc/passwd'
+      }   
+  }
+  stage('sub'){
+      steps{
+          echo 'action3'
+      }
+  }
   }
 }

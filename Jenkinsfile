@@ -42,19 +42,19 @@ pipeline{
         }
     }
     
-    stage('codebuild'){
+    stage('codes'){
       steps{
         agent {
           label 'slave1'
         }
       }
     }
-    stage('Unit-testing'){
+    stage('Unit-tes'){
         steps{
           sh 'cat /etc/passwd'
         }   
     }
-    stage('sub-job3'){
+    stage('sub'){
         steps{
             echo 'action3'
         }
